@@ -22,7 +22,7 @@ This breaks down into roughly three phases:
 
 **Context:** The [MASK benchmark](https://www.mask-benchmark.ai/) (Ren et al., 2025) is the first large-scale evaluation that disentangles model honesty from accuracy. The original paper found that frontier LLMs lie 20–60% of the time when pressured, and that honesty does not improve with training compute. These results were based on 27 models with training FLOPs up to ~10²⁶.
 
-**What I'm doing:** Replicating MASK on 9 current models from 7 families (GPT, Claude, Gemini, DeepSeek, Grok, Llama, Qwen) using the [inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/mask) framework. This extends the original FLOP range into ~10²⁶–10²⁷ with models released after the paper, while overlapping with the paper's upper range for continuity.
+**What I'm doing:** Replicating MASK on 9 current models from 7 families (GPT, Claude, Gemini, DeepSeek, Grok, Llama, Qwen) using the [inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/mask) framework. This extends the original FLOP range into ~10²⁶–10²⁷ with models released after the paper, while overlapping with the paper's upper range for continuity. See the preliminary planning [here](https://docs.google.com/presentation/d/1B7xZ18xbA5uEOpCi8DdP6eqmmSidxaX1zFRwgIMLtLM/edit?usp=sharing)
 
 **Progress so far:**
 - Environment and workflow set up (Windows / local laptop for API models, RunPod for open-weight models)

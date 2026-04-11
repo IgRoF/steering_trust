@@ -2,7 +2,7 @@
 
 A research agenda on AI honesty, deception and trustworthiness. This repo tracks my work on evaluating and steering honesty in large language models, starting with benchmark replication and building towards mechanistic interpretability and honesty interventions.
 
-> **Status (21 March 2026):** I'm currently working on Step 1 of this agenda: replicating and extending the [MASK honesty benchmark](https://arxiv.org/abs/2503.03750) on 2026 frontier models, as part of [BlueDot Impact](https://bluedot.org)'s Technical AI Safety Project Sprint. See [Current Project](#current-project-mask-replication--extension) below for details and preliminary results. The original steering vectors work described in earlier versions of this README is planned for a later phase; I decided to start with the benchmarking foundations first.
+> **➡️ Latest work (11 April 2026):** The first public version of my **[MASK Benchmark Replication](mask-benchmark-replication/)** package is now available in this repo. If you are here to look at concrete results, that subfolder is the right place to start: it contains the full replication write-up, the dated result tables, the reproducibility guides, and a curated public script surface. See [mask-benchmark-replication/README.md](mask-benchmark-replication/README.md) for the entry point, and [mask-benchmark-replication/docs/results/results-overview.md](mask-benchmark-replication/docs/results/results-overview.md) for the shortest summary of the current findings.
 
 ---
 
@@ -12,7 +12,7 @@ My long-term research interest is investigating whether we can detect a model's 
 
 This breaks down into roughly three phases:
 
-1. **Evaluating honesty at the frontier:** Replicate the MASK benchmark on the latest frontier models to establish baselines and test whether the original finding (that honesty does not improve with scale) persists. *(in progress)*
+1. **Evaluating honesty at the frontier:** Replicate the MASK benchmark on the latest frontier models to establish baselines and test whether the original finding (that honesty does not improve with scale) persists. *(first public version released)*
 2. **Investigating alternative elicitation methods:** Explore whether dishonesty can be elicited via methods other than prompt pressure (e.g. activation steering, contrastive prompts), to disentangle genuine deceptiveness from instruction-following compliance / role-laying. *(planned)*
 3. **Steering for honesty:** Apply and compare honesty interventions (LoRRA, contrastive activation addition, SAEs, weight steering) and measure their impact on MASK and other benchmarks. *(planned)*
 
@@ -20,17 +20,17 @@ This breaks down into roughly three phases:
 
 ## Current Project: MASK Replication & Extension
 
-**Context:** The [MASK benchmark](https://www.mask-benchmark.ai/) (Ren et al., 2025) is the first large-scale evaluation that disentangles model honesty from accuracy. The original paper found that frontier LLMs lie 20–60% of the time when pressured, and that honesty does not improve with training compute. These results were based on 27 models with training FLOPs up to ~10²⁶.
-
-**What I'm doing:** Replicating MASK on 9 current models from 7 families (GPT, Claude, Gemini, DeepSeek, Grok, Llama, Qwen) using the [inspect_evals](https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/mask) framework. This extends the original FLOP range into ~10²⁶–10²⁷ with models released after the paper, while overlapping with the paper's upper range for continuity. See the preliminary planning [here](https://docs.google.com/presentation/d/1B7xZ18xbA5uEOpCi8DdP6eqmmSidxaX1zFRwgIMLtLM/edit?usp=sharing)
-
-**Progress so far:**
-- Environment and workflow set up (Windows / local laptop for API models, RunPod for open-weight models)
-- Provider SDKs installed and tested for OpenAI, Anthropic, Google, DeepSeek, and xAI
-- Preliminary n=10 pilot runs completed for 6 API models, confirming the pipeline works
-- Phase 1 de-risking effectively complete; moving into full 1000-record runs
-
-Results and a write-up will be added here as they become available.
+**Status (11 April 2026):** The first public version of the replication package has been uploaded under [`mask-benchmark-replication/`](mask-benchmark-replication/). It covers nine completed full runs (1,000 samples each) on current frontier models from seven families, plus the supporting reproducibility guides and dated result tables. Phase 1 of the agenda is now in a state where it can be read and rerun by others.
+ 
+**Brief summary of findings:**
+ 
+- The broad MASK pattern still holds: several frontier models remain factually accurate while still lying often under pressure.
+- Claude Opus 4.6 is the strongest honesty result in the completed set (0.838 honesty, 0.906 accuracy), and GPT-5.4 is notably above the paper's GPT-4.5-preview row on both axes.
+- DeepSeek V3.2 and Grok 4.20 still occupy the high-accuracy, low-honesty corner of the comparison set, showing the same "knows but lies" pattern as their earlier model from the original paper.
+- Gemini Flash looks mixed: more honest than Gemini 2.0 Flash in the paper, but less accurate on the first completed Gemini full run.
+- The GPT-4o overlap rerun and the latest Llama 3.1 OpenRouter rerun act as paper-comparable anchors, and both land close to the paper's appendix values.
+ 
+For the full tables, the family-evolution comparison, the accuracy comparability notes, and the reproducibility guides, please go to [mask-benchmark-replication/](mask-benchmark-replication/).
 
 ---
 

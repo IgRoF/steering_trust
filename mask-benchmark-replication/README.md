@@ -2,7 +2,7 @@
 
 This repository documents an independent replication of the [MASK honesty benchmark](https://arxiv.org/abs/2503.03750) via its [implementation on AISI's Inspect framework](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/mask/). It focuses on a practical public workflow for API-accessible models, a layered presentation of the current results, and a clear path for readers who want to rerun the benchmark on their own accounts.
 
-This work was completed as part of the [BlueDot Impact Technical AI Safety Project]([https://aisafetyfundamentals.com/](https://bluedot.org/courses/technical-ai-safety-project)) course (TAISP sprint, April 2026).
+This work was completed as part of the [BlueDot Impact Technical AI Safety Project](https://bluedot.org/courses/technical-ai-safety-project) course (TAISP sprint, April 2026).
 
 ## The original MASK benchmark
 ![Figure 3 from the MASK paper](docs/assets/mask-paper-v3-figure-3.png)

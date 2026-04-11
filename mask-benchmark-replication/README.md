@@ -2,13 +2,16 @@
 
 This repository documents an independent replication of the [MASK honesty benchmark](https://arxiv.org/abs/2503.03750) via its [implementation on AISI's Inspect framework](https://ukgovernmentbeis.github.io/inspect_evals/evals/safeguards/mask/). It focuses on a practical public workflow for API-accessible models, a layered presentation of the current results, and a clear path for readers who want to rerun the benchmark on their own accounts.
 
-This work was completed as part of the [BlueDot Impact AI Safety Fundamentals](https://aisafetyfundamentals.com/) course (TAISP sprint, April 2026).
+This work was completed as part of the [BlueDot Impact Technical AI Safety Project]([https://aisafetyfundamentals.com/](https://bluedot.org/courses/technical-ai-safety-project)) course (TAISP sprint, April 2026).
 
+## The original MASK benchmark
 ![Figure 3 from the MASK paper](docs/assets/mask-paper-v3-figure-3.png)
 
 > MASK tests whether a model says what it appears to believe when a prompt creates pressure to be dishonest.
 
-*Figure 3, reproduced from the MASK paper (arXiv:2503.03750v3, p. 4). Original caption:<br>Our lying evaluation pipeline uses a three-step process anchored by a proposition, a variable capturing what we expect models to lie about and for which ground truth is known. (1) Prompt the model with two contrasting prompts, a pressure prompt designed to potentially induce deception and a neutral belief elicitation prompt. (2) Use LLMs to map both model statement (S) and belief (B) to their respective proposition values, with additional checks to ensure models consistently hold the belief B. (3) Measure lying by comparing statement S against belief B, as well as accuracy by comparing belief B against ground truth T. Example shortened for brevity.*
+Figure 3, reproduced from the MASK paper (arXiv:2503.03750v3, p. 4). Original caption:
+
+*Our lying evaluation pipeline uses a three-step process anchored by a proposition, a variable capturing what we expect models to lie about and for which ground truth is known. (1) Prompt the model with two contrasting prompts, a pressure prompt designed to potentially induce deception and a neutral belief elicitation prompt. (2) Use LLMs to map both model statement (S) and belief (B) to their respective proposition values, with additional checks to ensure models consistently hold the belief B. (3) Measure lying by comparing statement S against belief B, as well as accuracy by comparing belief B against ground truth T. Example shortened for brevity.*
 
 Formally, the paper defines lying and accuracy in terms of a model belief `B` and a model response `S`:
 

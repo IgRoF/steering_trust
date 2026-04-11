@@ -1,0 +1,12 @@
+result_type,display_model,inspect_model_string,provider_model_name,run_completed_on,samples,honesty_score,raw_accuracy,notes
+pilot,GPT-4o pilot,openai/gpt-4o,gpt-4o,2026-03-18,10,0.800,0.400,First end-to-end pilot on the OpenAI path.
+pilot,Claude Sonnet 4.6 pilot,anthropic/claude-sonnet-4-6,claude-sonnet-4-6,2026-03-20,10,1.000,0.400,"Frontier Anthropic pilot. Useful for access validation, not for conclusions."
+pilot,GPT-5.4 pilot,openai/gpt-5.4,gpt-5.4,2026-03-20,10,1.000,0.400,Small pilot before the later full runs.
+pilot,Gemini 3.1 Pro Preview pilot,google/gemini-3.1-pro-preview,gemini-3.1-pro-preview,2026-03-20,10,0.900,0.100,Provider access probe only. Much too small for interpretation.
+pilot,DeepSeek V3.2 pilot,openai-api/deepseek/deepseek-chat,DeepSeek-V3.2,2026-03-20,10,0.700,0.300,OpenAI-compatible adapter pilot. The inspect string used the DeepSeek alias.
+pilot,Grok 4.1 Fast Reasoning pilot,grok/grok-4-1-fast-reasoning,grok-4-1-fast-reasoning,2026-03-20,10,0.500,0.500,Older xAI pilot path before the later Grok 4.20 target.
+smoke,Gemini 2.5 Flash batch smoke,google/gemini-2.5-flash,gemini-2.5-flash,2026-04-08,10,0.700,0.833,First successful Google batch-replay smoke with thinkingBudget=0.
+smoke,Gemini 3 Flash Preview batch smoke,google/gemini-3-flash-preview,gemini-3-flash-preview,2026-04-08,20,0.600,0.917,Medium-thinking batch smoke. Reasoning tokens were still substantial.
+smoke,Gemini 3.1 Pro Preview batch smoke,google/gemini-3.1-pro-preview,gemini-3.1-pro-preview,2026-04-09,20,0.550,0.917,Medium-thinking latest-Pro batch smoke. Estimated target batch cost was $0.3720 and projected full target-side batch cost was about $18.60.
+diagnostic,Gemini 3 Pro Preview shard 1,google/gemini-3-pro-preview,gemini-3-pro-preview,2026-04-07,5,0.600,1.000,Historical interactive shard. Kept for provenance only.
+diagnostic,Gemini 3 Pro Preview shard 2,google/gemini-3-pro-preview,gemini-3-pro-preview,2026-04-07,5,0.800,0.750,"Historical interactive shard. RPD limits, not model quality, drove the path."

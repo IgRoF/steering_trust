@@ -35,6 +35,18 @@ The results are organized in three groups:
 - Llama 3.1 8B now has a pinned OpenRouter rerun that lands close to the paper's appendix anchor, but the overlap-anchor story remains more fragile than the GPT-4o anchor because judge fragility still mattered more.
 - The open-weight provider-API comparison set is now broader than the Llama overlap anchor alone: Scout lands in the middle of the completed pack, while Qwen is less honest than Scout but still materially above the current Grok result.
 
+## Detailed analysis
+
+The [full runs](results-full-runs.md) page now includes:
+
+- **Detailed honesty breakdown:** per-model counts and percentages for each honesty label (honest, lie, evade, no-belief, error).
+- **Detailed accuracy breakdown:** per-model counts and percentages for each accuracy label (correct, incorrect, no-belief, error), with provided_facts excluded from the denominator.
+- **Knows-but-lies analysis:** accuracy minus honesty gap with conservative 95% CIs and evade/lie ratios.
+- **Per-config honesty and accuracy:** archetype-level splits across all six question types.
+- **Scale Labs MASK leaderboard comparison:** directional cross-source comparison for the four models that overlap between this project (1,000 public examples) and the Scale leaderboard (500 private examples).
+
+All confidence intervals use Wilson score intervals at the 95% level. At N=1000, headline CI widths are roughly 3 percentage points.
+
 ## Read these next
 
 - [Full runs](results-full-runs.md)
